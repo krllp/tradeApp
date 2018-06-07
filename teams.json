@@ -1,0 +1,316 @@
+{
+	"teams": [
+		{
+			"name": "Chicago Bulls",
+			"manager": [
+				{
+					"name": "Sllub Oga",
+					"login": "sllub",
+					"pass": "1234"
+				}
+			],
+			"players": [
+				{
+					"name": "Sean Kilpatrick",
+					"salary": "212000"
+				},
+				{
+					"name": "Omer Asik",
+					"salary": "255000"
+				},
+				{
+					"name": "Kris Dunn",
+					"salary": "210000"
+				},
+				{
+					"name": "Jerian Grant",
+					"salary": "198000"
+				},
+				{
+					"name": "Paul Zipser",
+					"salary": "226000"
+				},
+				{
+					"name": "Noah Vonleh",
+					"salary": "245000"
+				},
+				{
+					"name": "Bobby Portis",
+					"salary": "248000"
+				},
+				{
+					"name": "Cameron Payne",
+					"salary": "185000"
+				},
+				{
+					"name": "David Nwaba",
+					"salary": "209000"
+				},
+				{
+					"name": "Zach LaVine",
+					"salary": "185000"
+				},
+				{
+					"name": "Robin Lopez",
+					"salary": "277000"
+				},
+				{
+					"name": "Jarell Eddie",
+					"salary": "218000"
+				},
+				{
+					"name": "Antonio Blakeney",
+					"salary": "197000"
+				},
+				{
+					"name": "Justin Holiday",
+					"salary": "185000"
+				},
+				{
+					"name": "Michael Jordan",
+					"salary": "1000000"
+				}
+			]
+		},
+		{
+			"name": "LA Lakers",
+			"manager": [
+				{
+					"name": "Srekal Al",
+					"login": "sa",
+					"pass": "1234"
+				}
+			],
+			"players": [
+				{
+					"name": "Lonzo Ball",
+					"salary": "190000"
+				},
+				{
+					"name": "Thomas Bryant",
+					"salary": "248000"
+				},
+				{
+					"name": "Alex Caruso",
+					"salary": "186000"
+				},
+				{
+					"name": "Luol Deng",
+					"salary": "220000"
+				},
+				{
+					"name": "Tyler Ennis",
+					"salary": "194000"
+				},
+				{
+					"name": "Channing Frye",
+					"salary": "255000"
+				},
+				{
+					"name": "Josh Hart",
+					"salary": "215000"
+				},
+				{
+					"name": "Andre Ingram",
+					"salary": "590000"
+				},
+				{
+					"name": "Brandon Ingram",
+					"salary": "190000"
+				},
+				{
+					"name": "Kyle Kuzma",
+					"salary": "220000"
+				},
+				{
+					"name": "Brook Lopez",
+					"salary": "168000"
+				},
+				{
+					"name": "Gary Payton",
+					"salary": "190000"
+				},
+				{
+					"name": "Travis Wear",
+					"salary": "225000"
+				},
+				{
+					"name": "Ivica Zubac",
+					"salary": "240000"
+				}
+			]
+		},
+		{
+			"name": "Miami Heat",
+			"manager": [
+				{
+					"name": "Teah Ima",
+					"login": "ti",
+					"pass": "1234"
+				}
+			],
+			"players": [
+				{
+					"name": "Bam Adebayo",
+					"salary": "255000"
+				},
+				{
+					"name": "Luke Babbitt",
+					"salary": "225000"
+				},
+				{
+					"name": "Goran Dragic",
+					"salary": "190000"
+				},
+				{
+					"name": "Wayne Ellington",
+					"salary": "200000"
+				},
+				{
+					"name": "Udonis Haslem",
+					"salary": "435000"
+				},
+				{
+					"name": "James Johnson",
+					"salary": "240000"
+				},
+				{
+					"name": "Tyler Johnson",
+					"salary": "190000"
+				},
+				{
+					"name": "Derrick Jones",
+					"salary": "200000"
+				},
+				{
+					"name": "Jordan Mickey",
+					"salary": "235000"
+				},
+				{
+					"name": "Kelly Olynyk",
+					"salary": "245000"
+				},
+				{
+					"name": "Dwayne Wade",
+					"salary": "550000"
+				},
+				{
+					"name": "Dion Waiters",
+					"salary": "215000"
+				},
+				{
+					"name": "Derrick Walton",
+					"salary": "185000"
+				}
+			]
+		},
+		{
+			"name": "Milwaukee Bucks",
+			"manager": [
+				{
+					"name": "Skcub Eek",
+					"login": "skee",
+					"pass": "1234"
+				}
+			],
+			"players": [
+				{
+					"name": "Eric Bledsoe",
+					"salary": "205000"
+				},
+				{
+					"name": "Malcom Brogdon",
+					"salary": "315000"
+				},
+				{
+					"name": "Sterling Brown",
+					"salary": "340000"
+				},
+				{
+					"name": "John Henson",
+					"salary": "229000"
+				},
+				{
+					"name": "Brandon Jennings",
+					"salary": "170000"
+				},
+				{
+					"name": "Thon Maker",
+					"salary": "60000"
+				},
+				{
+					"name": "Khris Middleton",
+					"salary": "234000"
+				},
+				{
+					"name": "Xavier Munford",
+					"salary": "173000"
+				},
+				{
+					"name": "Jabari Parker",
+					"salary": "250000"
+				},
+				{
+					"name": "Tony Shell",
+					"salary": "221000"
+				},
+				{
+					"name": "Jason Terry",
+					"salary": "185000"
+				}
+			]
+		},
+		{
+			"name": "New York Knicks",
+			"manager": [
+				{
+					"name": "Skcink KN",
+					"login": "skn",
+					"pass": "1234"
+				}
+			],
+			"players": [
+				{
+					"name": "Ron Baker",
+					"salary": "220000"
+				},
+				{
+					"name": "Trey Burke",
+					"salary": "191000"
+				},
+				{
+					"name": "Damyean Dotson",
+					"salary": "210000"
+				},
+				{
+					"name": "Tim Hardaway",
+					"salary": "205000"
+				},
+				{
+					"name": "Isaiah Hicks",
+					"salary": "242000"
+				},
+				{
+					"name": "Jarrett Jack",
+					"salary": "310000"
+				},
+				{
+					"name": "Enes Kanter",
+					"salary": "245000"
+				},
+				{
+					"name": "Luke Kornet",
+					"salary": "250000"
+				},
+				{
+					"name": "Courtney Lee",
+					"salary": "200000"
+				},
+				{
+					"name": "Joakim Noah",
+					"salary": "450000"
+				}
+			]
+		}
+	]
+}
