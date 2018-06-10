@@ -1,8 +1,6 @@
-package trade.com.config;
+package com.trade.config;
 
 public class AppConfig {
-
-    public final static String PATH_TO_FILE = "pathToFile";
 
     private String pathToFile;
 
