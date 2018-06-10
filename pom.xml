@@ -37,7 +37,7 @@
                             <archive>
                                 <manifest>
                                     <mainClass>
-                                        trade.com.App
+                                        com.trade.Starter
                                     </mainClass>
                                 </manifest>
                             </archive>
