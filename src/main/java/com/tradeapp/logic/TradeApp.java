@@ -1,7 +1,7 @@
-package com.trade.logic;
+package com.tradeapp.logic;
 
-import com.trade.config.AppConfig;
-import com.trade.utils.parser.AppConfigParser;
+import com.tradeapp.config.AppConfig;
+import com.tradeapp.utils.parser.AppConfigParser;
 
 public class TradeApp {
 

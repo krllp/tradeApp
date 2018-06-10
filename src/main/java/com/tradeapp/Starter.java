@@ -1,6 +1,6 @@
-package com.trade;
+package com.tradeapp;
 
-import com.trade.logic.TradeApp;
+import com.tradeapp.logic.TradeApp;
 
 public class Starter {
 

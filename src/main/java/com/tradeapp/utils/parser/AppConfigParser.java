@@ -1,6 +1,6 @@
-package com.trade.utils.parser;
+package com.tradeapp.utils.parser;
 
-import com.trade.config.AppConfig;
+import com.tradeapp.config.AppConfig;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;

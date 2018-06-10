@@ -1,4 +1,4 @@
-package com.trade.config;
+package com.tradeapp.config;
 
 public class AppConfig {
 
