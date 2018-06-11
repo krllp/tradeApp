@@ -1,0 +1,20 @@
+{
+	"teams": [
+		{
+			"name": "testNameTeam",
+			"manager": [
+				{
+					"name": "testNameManager",
+					"login": "testLogin",
+					"pass": "testPass"
+				}
+			],
+			"players": [
+				{
+					"name": "testNamePlayer",
+					"salary": "100"
+				}
+			]
+		}
+	]
+}
