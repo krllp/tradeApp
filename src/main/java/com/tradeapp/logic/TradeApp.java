@@ -3,7 +3,7 @@ package com.tradeapp.logic;
 import com.tradeapp.config.AppConfig;
 import com.tradeapp.entities.TeamEntity;
 import com.tradeapp.utils.parser.AppConfigParser;
-import com.tradeapp.utils.parser.EntitiesParser;
+import com.tradeapp.utils.parser.TeamsParser;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ public class TradeApp {
 
     public TradeApp() {
         cfg = AppConfigParser.INSTANCE.parse(CONFIG_FILENAME);
-        teamsList = EntitiesParser.INSTANCE.parse(cfg.getPathToFile());
+        teamsList = TeamsParser.INSTANCE.parse(cfg.getPathToFile());
     }
 
     public void start() {
