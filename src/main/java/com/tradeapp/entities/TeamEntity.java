@@ -4,9 +4,8 @@ import java.util.List;
 
 public class TeamEntity {
 
+    private Long id;
     private String name;
-    private List<PlayerEntity> players;
-    private ManagerEntity manager;
 
     public String getName() {
         return name;
@@ -16,19 +15,11 @@ public class TeamEntity {
         this.name = name;
     }
 
-    public List<PlayerEntity> getPlayers() {
-        return players;
+    public Long getId() {
+        return id;
     }
 
-    public void setPlayers(List<PlayerEntity> players) {
-        this.players = players;
-    }
-
-    public ManagerEntity getManager() {
-        return manager;
-    }
-
-    public void setManager(ManagerEntity manager) {
-        this.manager = manager;
+    public void setId(Long id) {
+        this.id = id;
     }
 }

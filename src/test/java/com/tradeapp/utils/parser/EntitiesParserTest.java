@@ -1,12 +1,12 @@
 package com.tradeapp.utils.parser;
 
+import com.tradeapp.entities.ManagerEntity;
 import com.tradeapp.entities.PlayerEntity;
 import com.tradeapp.entities.TeamEntity;
+import com.tradeapp.storage.Storage;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.List;
 
 public class EntitiesParserTest {
 
@@ -17,28 +17,36 @@ public class EntitiesParserTest {
     private static final String MANAGER_PASSWORD = "testPass";
     private static final String PLAYER_NAME = "testNamePlayer";
     private static final int PLAYER_SALARY = 100;
+    private static final long PLAYER_TEAM_ID = 1;
 
-    private List<TeamEntity> teamsList;
     private String teamName;
+
     private String managerName;
     private String managerLogin;
     private String managerPass;
+
+    private long playerTeamID;
     private String playerName;
     private int playerSalary;
 
     @Before
-    public void createNewTeamEntityList() {
-        teamsList = EntitiesParser.INSTANCE.parse(FILE_NAME);
+    public void parseEntitiesForTest() {
+        EntitiesParser.INSTANCE.parse(FILE_NAME);
 
-        for(TeamEntity team : teamsList) {
-            teamName = team.getName();
-            managerName = team.getManager().getName();
-            managerLogin = team.getManager().getLogin();
-            managerPass = team.getManager().getPassword();
-            for(PlayerEntity player : team.getPlayers()) {
-                playerName = player.getName();
-                playerSalary = player.getSalary();
-            }
+        for (TeamEntity teams : Storage.INSTANCE.getTeams()) {
+            teamName = teams.getName();
+        }
+
+        for (ManagerEntity managers : Storage.INSTANCE.getManagers()) {
+            managerName = managers.getName();
+            managerLogin = managers.getLogin();
+            managerPass = managers.getPassword();
+        }
+
+        for (PlayerEntity players : Storage.INSTANCE.getPlayers()) {
+            playerTeamID = players.getTeamID();
+            playerName = players.getName();
+            playerSalary = players.getSalary();
         }
     }
 
@@ -70,5 +78,10 @@ public class EntitiesParserTest {
     @Test
     public void playerSalaryShouldBeEqual() {
         Assert.assertEquals(PLAYER_SALARY, playerSalary);
+    }
+
+    @Test
+    public void playerTeamIdShouldBeEqualTeamId() {
+        Assert.assertEquals(PLAYER_TEAM_ID, playerTeamID);
     }
 }
