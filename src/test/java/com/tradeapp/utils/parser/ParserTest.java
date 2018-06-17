@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class ParserTest {
 
-    private String PATH_TO_JSON = "teams.test.json";
+    private String PATH_TO_JSON = "src/test/resources/teams.test.json";
 
     JSONObject getTestJson() throws IOException, ParseException {
         JSONParser jsonParser = new JSONParser();

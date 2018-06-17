@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class AppConfigParserTest {
 
-    private static final String FILE_NAME = "config.test.json";
+    private static final String FILE_NAME = "src/test/resources/config.test.json";
     private static final String TEST_PATH_TO_FILE = "testPath";
 
     @Test

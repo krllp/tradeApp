@@ -77,7 +77,7 @@ public class EntitiesParserTest {
     }
 
     @Test
-    public void firstManagerTeamIDShouldBeEualTeamID() {
+    public void firstManagerTeamIDShouldBeEqualTeamID() {
         long managerTeamID = Storage.INSTANCE.getManagers().get(0).getTeamID();
         Assert.assertEquals(FIRST_MANAGER_TEAM_ID, managerTeamID);
     }
@@ -89,7 +89,7 @@ public class EntitiesParserTest {
     }
 
     @Test
-    public void thirdManagerTeamIDShouldBeEualTeamID() {
+    public void thirdManagerTeamIDShouldBeEqualTeamID() {
         long managerTeamID = Storage.INSTANCE.getManagers().get(2).getTeamID();
         Assert.assertEquals(THIRD_MANAGER_TEAM_ID, managerTeamID);
     }
