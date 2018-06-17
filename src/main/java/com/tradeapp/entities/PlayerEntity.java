@@ -2,7 +2,7 @@ package com.tradeapp.entities;
 
 public class PlayerEntity {
 
-    private Long id;
+    private Long ID;
     private String name;
     private int salary;
     private Long teamID;
@@ -23,12 +23,12 @@ public class PlayerEntity {
         this.salary = salary;
     }
 
-    public Long getId() {
-        return id;
+    public Long getID() {
+        return ID;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setID(Long ID) {
+        this.ID = ID;
     }
 
     public Long getTeamID() {

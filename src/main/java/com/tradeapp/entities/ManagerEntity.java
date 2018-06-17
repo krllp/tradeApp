@@ -2,7 +2,7 @@ package com.tradeapp.entities;
 
 public class ManagerEntity {
 
-    private Long id;
+    private Long ID;
     private String name;
     private String login;
     private String password;
@@ -32,12 +32,12 @@ public class ManagerEntity {
         this.password = password;
     }
 
-    public Long getId() {
-        return id;
+    public Long getID() {
+        return ID;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setID(Long ID) {
+        this.ID = ID;
     }
 
     public Long getTeamID() {

@@ -10,7 +10,13 @@ import java.util.List;
 
 public class ManagerParser implements Parser {
 
+    public static final ManagerParser INSTANCE = new ManagerParser();
+
+    private ManagerParser() {
+    }
+
     private static List<ManagerEntity> fullManagersList = new ArrayList<>();
+    private long managerAndTeamID = 1;
 
     /**
      * Метод парсит данные менеджера из Json-объекта и
@@ -19,13 +25,12 @@ public class ManagerParser implements Parser {
      */
     @Override
     public void parse(JSONObject jsonObject) {
-        JSONArray jsonArray = (JSONArray) jsonObject.get(JsonKeys.TEAMS);
+        JSONArray jsonTeamList = (JSONArray) jsonObject.get(JsonKeys.TEAMS);
 
-        long managerAndTeamID = 1;
-
-        for(Object o : jsonArray) {
-            JSONObject jsonObjectManager = (JSONObject) o;
-            getManager(managerAndTeamID, (JSONArray) jsonObjectManager.get(JsonKeys.MANAGER), managerAndTeamID);
+        for(Object o : jsonTeamList) {
+            JSONObject jsonTeam = (JSONObject) o;
+            JSONObject jsonManager = getJsonManager((JSONArray) jsonTeam.get(JsonKeys.MANAGER));
+            getManager(managerAndTeamID, managerAndTeamID, jsonManager );
 
             managerAndTeamID++;
         }
@@ -34,24 +39,30 @@ public class ManagerParser implements Parser {
     }
 
     /**
+     * Метод достает первый элемент менеджера из массива
+     * @param jsonManager json массив с данными менеджера
+     * @return возвращает Json-объект единственного менеджера
+     */
+    private JSONObject getJsonManager(JSONArray jsonManager) {
+        return (JSONObject) jsonManager.get(0);
+    }
+
+    /**
      * Метод инициализирует сущность менеджера
      * @param managerID идентификатор менеджера
-     * @param jsonArray json массив с данными менеджера
+     * @param jsonManager json объект с данными менеджера
      * @param teamID идентификатор команды
      */
-    private void getManager(long managerID, JSONArray jsonArray, long teamID) {
-        for(Object o : jsonArray) {
-            ManagerEntity managerEntity = new ManagerEntity();
-            JSONObject manager = (JSONObject) o;
+    private void getManager(long managerID, long teamID, JSONObject jsonManager) {
+        ManagerEntity managerEntity = new ManagerEntity();
 
-            managerEntity.setId(managerID);
-            managerEntity.setName((String) manager.get(JsonKeys.MANAGER_NAME));
-            managerEntity.setLogin((String) manager.get(JsonKeys.MANAGER_LOGIN));
-            managerEntity.setPassword((String) manager.get(JsonKeys.MANAGER_PASS));
-            managerEntity.setTeamID(teamID);
+        managerEntity.setID(managerID);
+        managerEntity.setName((String) jsonManager.get(JsonKeys.MANAGER_NAME));
+        managerEntity.setLogin((String) jsonManager.get(JsonKeys.MANAGER_LOGIN));
+        managerEntity.setPassword((String) jsonManager.get(JsonKeys.MANAGER_PASS));
+        managerEntity.setTeamID(teamID);
 
-            fullManagersList.add(managerEntity);
-        }
+        fullManagersList.add(managerEntity);
     }
 
     private class JsonKeys {

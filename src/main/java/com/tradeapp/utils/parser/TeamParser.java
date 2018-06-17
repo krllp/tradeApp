@@ -10,7 +10,13 @@ import java.util.List;
 
 public class TeamParser implements Parser {
 
+    public static final TeamParser INSTANCE = new TeamParser();
+
+    private TeamParser() {
+    }
+
     private static List<TeamEntity> fullTeamsList = new ArrayList<>();
+    private long teamID = 1;
 
     /**
      * Метод парсит название команды из Json-объекта и
@@ -19,13 +25,11 @@ public class TeamParser implements Parser {
      */
     @Override
     public void parse(JSONObject jsonObject) {
-        JSONArray jsonArray = (JSONArray) jsonObject.get(JsonKeys.TEAMS);
+        JSONArray jsonTeamList = (JSONArray) jsonObject.get(JsonKeys.TEAMS);
 
-        long teamID = 1;
-
-        for (Object o : jsonArray) {
-            JSONObject jsonObjectTeam = (JSONObject) o;
-            getTeam(teamID++, (String) jsonObjectTeam.get(JsonKeys.TEAM_NAME));
+        for (Object o : jsonTeamList) {
+            JSONObject jsonTeam = (JSONObject) o;
+            getTeam(teamID++, (String) jsonTeam.get(JsonKeys.TEAM_NAME));
         }
 
         Storage.INSTANCE.setTeams(fullTeamsList);
@@ -33,13 +37,13 @@ public class TeamParser implements Parser {
 
     /**
      * Метод инициализирует сущность команды
-     * @param id идентификатор команды
+     * @param ID идентификатор команды
      * @param name название команды
      */
-    private void getTeam(long id, String name) {
+    private void getTeam(long ID, String name) {
         TeamEntity teamEntity = new TeamEntity();
 
-        teamEntity.setId(id);
+        teamEntity.setID(ID);
         teamEntity.setName(name);
 
         fullTeamsList.add(teamEntity);

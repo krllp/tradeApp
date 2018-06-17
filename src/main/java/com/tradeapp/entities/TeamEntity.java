@@ -1,10 +1,8 @@
 package com.tradeapp.entities;
 
-import java.util.List;
-
 public class TeamEntity {
 
-    private Long id;
+    private Long ID;
     private String name;
 
     public String getName() {
@@ -15,11 +13,11 @@ public class TeamEntity {
         this.name = name;
     }
 
-    public Long getId() {
-        return id;
+    public Long getID() {
+        return ID;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setID(Long ID) {
+        this.ID = ID;
     }
 }

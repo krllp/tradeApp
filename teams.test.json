@@ -1,18 +1,70 @@
 {
 	"teams": [
 		{
-			"name": "testNameTeam",
+			"name": "testNameTeam1",
 			"manager": [
 				{
-					"name": "testNameManager",
-					"login": "testLogin",
-					"pass": "testPass"
+					"name": "testNameManager1",
+					"login": "testLogin1",
+					"pass": "testPass1"
 				}
 			],
 			"players": [
 				{
-					"name": "testNamePlayer",
+					"name": "testNamePlayer1",
 					"salary": "100"
+				},
+				{
+					"name": "testNamePlayer2",
+					"salary": "200"
+				},
+				{
+					"name": "testNamePlayer3",
+					"salary": "300"
+				}
+			]
+		},
+		{
+			"name": "testNameTeam2",
+			"manager": [
+				{
+					"name": "testNameManager2",
+					"login": "testLogin2",
+					"pass": "testPass2"
+				}
+			],
+			"players": [
+				{
+					"name": "testNamePlayer4",
+					"salary": "400"
+				},
+				{
+					"name": "testNamePlayer5",
+					"salary": "500"
+				},
+				{
+					"name": "testNamePlayer6",
+					"salary": "600"
+				}
+			]
+		},
+		{
+			"name": "testNameTeam3",
+			"manager": [
+				{
+					"name": "testNameManager3",
+					"login": "testLogin3",
+					"pass": "testPass3"
+				}
+			],
+			"players": [
+				{
+					"name": "testNamePlayer7",
+					"salary": "700"
+				},
+				{
+					"name": "testNamePlayer8",
+					"salary": "800"
 				}
 			]
 		}

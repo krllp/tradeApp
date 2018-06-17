@@ -17,14 +17,14 @@ public class EntitiesParser {
 
     private EntitiesParser() {
         parsers = Arrays.asList(
-                new TeamParser(),
-                new ManagerParser(),
-                new PlayersParser()
+                TeamParser.INSTANCE,
+                ManagerParser.INSTANCE,
+                PlayersParser.INSTANCE
         );
     }
 
     /**
-     * Метод парсит все сущности: команд, менеджеров и игроков
+     * Метод парсит все сущности команд, менеджеров и игроков
      * @param pathToFile путь до Json-файла с составами команд
      */
     public void parse(String pathToFile) {

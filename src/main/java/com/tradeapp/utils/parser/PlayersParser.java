@@ -10,8 +10,14 @@ import java.util.List;
 
 public class PlayersParser implements Parser {
 
+    public static final PlayersParser INSTANCE = new PlayersParser();
+
+    private PlayersParser() {
+    }
+
     private static List<PlayerEntity> fullPlayersList = new ArrayList<>();
     private long playerID = 1;
+    private long teamID = 1;
 
     /**
      * Метод парсит данные игроков из Json-объекта и
@@ -20,13 +26,11 @@ public class PlayersParser implements Parser {
      */
     @Override
     public void parse(JSONObject jsonObject) {
-        JSONArray jsonArray = (JSONArray) jsonObject.get(JsonKeys.TEAMS);
+        JSONArray jsonTeamList = (JSONArray) jsonObject.get(JsonKeys.TEAMS);
 
-        long teamID = 1;
-
-        for (Object o : jsonArray) {
-            JSONObject jsonObjectPlayers = (JSONObject) o;
-            getPlayers((JSONArray) jsonObjectPlayers.get(JsonKeys.PLAYERS), teamID++);
+        for (Object o : jsonTeamList) {
+            JSONObject jsonTeam = (JSONObject) o;
+            getPlayers((JSONArray) jsonTeam.get(JsonKeys.PLAYERS), teamID++);
         }
 
         Storage.INSTANCE.setPlayers(fullPlayersList);
@@ -42,7 +46,7 @@ public class PlayersParser implements Parser {
             PlayerEntity playerEntity = new PlayerEntity();
             JSONObject player = (JSONObject) o;
 
-            playerEntity.setId(playerID++);
+            playerEntity.setID(playerID++);
             playerEntity.setName((String) player.get(JsonKeys.PLAYER_NAME));
             playerEntity.setSalary(Integer.parseInt((String ) player.get(JsonKeys.PLAYER_SALARY)));
             playerEntity.setTeamID(teamID);
