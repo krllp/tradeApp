@@ -11,6 +11,9 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.assertThat;
+
 public class ManagerParserTest extends ParserTest {
 
     private static final int MANAGERS_QNT = 3;
@@ -29,14 +32,25 @@ public class ManagerParserTest extends ParserTest {
         List<ManagerEntity> managers = Storage.INSTANCE.getManagers();
         assertNotNull(managers);
         assertEquals(MANAGERS_QNT, managers.size());
-        assertEquals(FIRST_MANAGER_NAME, managers.get(0).getName());
-        assertEquals(FIRST_MANAGER_LOGIN, managers.get(0).getLogin());
-        assertEquals(FIRST_MANAGER_PASSWORD, managers.get(0).getPassword());
-        assertEquals(FIRST_MANAGER_TEAM_ID, (long) managers.get(0).getTeamID());
-        assertEquals(THIRD_MANAGER_NAME, managers.get(2).getName());
-        assertEquals(THIRD_MANAGER_LOGIN, managers.get(2).getLogin());
-        assertEquals(THIRD_MANAGER_PASSWORD, managers.get(2).getPassword());
-        assertEquals(THIRD_MANAGER_TEAM_ID, (long) managers.get(2).getTeamID());
+
+        ManagerEntity firstTestManager = new ManagerEntity();
+        firstTestManager.setID((long) 1);
+        firstTestManager.setName(FIRST_MANAGER_NAME);
+        firstTestManager.setLogin(FIRST_MANAGER_LOGIN);
+        firstTestManager.setPassword(FIRST_MANAGER_PASSWORD);
+        firstTestManager.setTeamID(FIRST_MANAGER_TEAM_ID);
+
+        ManagerEntity thirdTestManager = new ManagerEntity();
+        thirdTestManager.setID((long) 3);
+        thirdTestManager.setName(THIRD_MANAGER_NAME);
+        thirdTestManager.setLogin(THIRD_MANAGER_LOGIN);
+        thirdTestManager.setPassword(THIRD_MANAGER_PASSWORD);
+        thirdTestManager.setTeamID(THIRD_MANAGER_TEAM_ID);
+
+        assertThat(managers, hasItems(
+                firstTestManager,
+                thirdTestManager
+        ));
     }
 
     private void parseManager() throws IOException, ParseException {
