@@ -15,6 +15,11 @@ public class AppConfigParser {
     private AppConfigParser() {
     }
 
+    /**
+     * Метод парсит конфиг-файл
+     * @param fileName название конфиг-файла
+     * @return возвращает конфигурацию приложения
+     */
     public AppConfig parse(String fileName) {
         AppConfig cfg = new AppConfig();
         JSONParser parser = new JSONParser();

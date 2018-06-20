@@ -1,12 +1,9 @@
 package com.tradeapp.entities;
 
-import java.util.List;
-
 public class TeamEntity {
 
+    private Long ID;
     private String name;
-    private List<PlayerEntity> players;
-    private ManagerEntity manager;
 
     public String getName() {
         return name;
@@ -16,19 +13,29 @@ public class TeamEntity {
         this.name = name;
     }
 
-    public List<PlayerEntity> getPlayers() {
-        return players;
+    public Long getID() {
+        return ID;
     }
 
-    public void setPlayers(List<PlayerEntity> players) {
-        this.players = players;
+    public void setID(Long ID) {
+        this.ID = ID;
     }
 
-    public ManagerEntity getManager() {
-        return manager;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        TeamEntity that = (TeamEntity) o;
+
+        if (ID != null ? !ID.equals(that.ID) : that.ID != null) return false;
+        return name != null ? name.equals(that.name) : that.name == null;
     }
 
-    public void setManager(ManagerEntity manager) {
-        this.manager = manager;
+    @Override
+    public int hashCode() {
+        int result = ID != null ? ID.hashCode() : 0;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        return result;
     }
 }
