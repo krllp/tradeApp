@@ -1,8 +1,12 @@
 package com.tradeapp.logic;
 
 import com.tradeapp.config.AppConfig;
+import com.tradeapp.transition.State;
+import com.tradeapp.transition.Transition;
 import com.tradeapp.utils.parser.AppConfigParser;
 import com.tradeapp.utils.parser.EntitiesParser;
+
+import java.util.Collections;
 
 public class TradeApp {
 
@@ -16,6 +20,6 @@ public class TradeApp {
     }
 
     public void start() {
-
+        Transition.INSTANCE.go(State.LOGIN, Collections.emptyMap());
     }
 }
