@@ -1,13 +1,16 @@
 package com.tradeapp.transition;
 
 import com.tradeapp.logic.state.LoginState;
+import com.tradeapp.logic.state.RosterViewState;
 import com.tradeapp.logic.state.StateLogic;
 
 import java.util.Map;
 
 public enum State {
 
-    LOGIN(new LoginState());
+    LOGIN(new LoginState()),
+    ROSTER_VIEW(new RosterViewState()),
+    ;
 
     private final StateLogic stateLogic;
 

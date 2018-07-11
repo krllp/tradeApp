@@ -1,25 +1,25 @@
 package com.tradeapp.logic.state;
 
+import com.tradeapp.entities.ManagerEntity;
+import com.tradeapp.transition.State;
+import com.tradeapp.transition.Transition;
 import com.tradeapp.utils.authenticator.Authenticator;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class LoginState implements StateLogic {
 
     @Override
     public void work(Map<String, Object> info) {
-        LoginInfo a = map(info);
         LoginInfo loginInfo = getLoginInfo();
-        Authenticator.INSTANCE.authorizeUser(loginInfo);
-        String login = (String) info.get("login");
+        ManagerEntity manager = Authenticator.INSTANCE.authorizeUser(loginInfo);
+        if (manager != null) {
+            Map<String, Object> rosterViewInfoMap = new HashMap<>();
+            rosterViewInfoMap.put("teamId", manager.getTeamID());
+            Transition.INSTANCE.go(State.ROSTER_VIEW, rosterViewInfoMap);
+        }
 
-    }
-
-    private LoginInfo map(Map<String, Object> info) {
-        String login = (String) info.get("login");
-        String pass = (String) info.get("pass");
-        LoginInfo loginInfo = new LoginInfo(login, pass);
-        return loginInfo;
     }
 
     private LoginInfo getLoginInfo() {
@@ -43,6 +43,14 @@ public class LoginState implements StateLogic {
 
         public String getPassword() {
             return password;
+        }
+
+        public void fromMap(Map<String, Object> map) {
+
+        }
+
+        public Map<String, Object> toMap() {
+
         }
     }
 }
