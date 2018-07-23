@@ -6,6 +6,6 @@ public class RosterViewState implements StateLogic {
 
     @Override
     public void work(Map<String, Object> info) {
-
+        System.out.println("Hello");
     }
 }
