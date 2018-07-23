@@ -67,7 +67,13 @@ public class ManagerParserTest extends ParserTest {
         ManagerParser.INSTANCE.parse(testJson);
     }
 
-    private ManagerEntity managerBuilder(long managerID, String managerName, String managerLogin, String managerPass, long managerTeamID) {
+    private ManagerEntity managerBuilder(
+            long managerID,
+            String managerName,
+            String managerLogin,
+            String managerPass,
+            long managerTeamID
+    ) {
         ManagerEntity managerEntity = new ManagerEntity();
         managerEntity.setID(managerID);
         managerEntity.setName(managerName);

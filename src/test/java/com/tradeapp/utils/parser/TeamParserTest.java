@@ -29,8 +29,14 @@ public class TeamParserTest extends ParserTest{
         parseTeam();
 
         List<TeamEntity> teams = Storage.INSTANCE.getTeams();
-        TeamEntity firstTeam = teamBuilder(FIRST_TEAM_ID, FIRST_TEAM_NAME);
-        TeamEntity thirdTeam = teamBuilder(THIRD_TEAM_ID, THIRD_TEAM_NAME);
+        TeamEntity firstTeam = teamBuilder(
+                FIRST_TEAM_ID,
+                FIRST_TEAM_NAME
+        );
+        TeamEntity thirdTeam = teamBuilder(
+                THIRD_TEAM_ID,
+                THIRD_TEAM_NAME
+        );
 
         assertNotNull(teams);
         assertEquals(TEAMS_QNT, teams.size());
@@ -48,7 +54,10 @@ public class TeamParserTest extends ParserTest{
         TeamParser.INSTANCE.parse(testJson);
     }
 
-    private TeamEntity teamBuilder(long teamID, String teamName) {
+    private TeamEntity teamBuilder(
+            long teamID,
+            String teamName
+    ) {
         TeamEntity teamEntity = new TeamEntity();
         teamEntity.setID(teamID);
         teamEntity.setName(teamName);

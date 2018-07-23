@@ -38,9 +38,24 @@ public class PlayersParserTest extends ParserTest {
         parsePlayers();
 
         List<PlayerEntity> players = Storage.INSTANCE.getPlayers();
-        PlayerEntity firstPlayer = playerBuilder(FIRST_PLAYER_ID, FIRST_PLAYER_NAME, FIRST_PLAYER_SALARY, FIRST_PLAYER_TEAM_ID);
-        PlayerEntity fifthPlayer = playerBuilder(FIFTH_PLAYER_ID, FIFTH_PLAYER_NAME, FIFTH_PLAYER_SALARY, FIFTH_PLAYER_TEAM_ID);
-        PlayerEntity eighthPlayer = playerBuilder(EIGHTH_PLAYER_ID, EIGHTH_PLAYER_NAME, EIGHTH_PLAYER_SALARY, EIGHTH_PLAYER_TEAM_ID);
+        PlayerEntity firstPlayer = playerBuilder(
+                FIRST_PLAYER_ID,
+                FIRST_PLAYER_NAME,
+                FIRST_PLAYER_SALARY,
+                FIRST_PLAYER_TEAM_ID
+        );
+        PlayerEntity fifthPlayer = playerBuilder(
+                FIFTH_PLAYER_ID,
+                FIFTH_PLAYER_NAME,
+                FIFTH_PLAYER_SALARY,
+                FIFTH_PLAYER_TEAM_ID
+        );
+        PlayerEntity eighthPlayer = playerBuilder(
+                EIGHTH_PLAYER_ID,
+                EIGHTH_PLAYER_NAME,
+                EIGHTH_PLAYER_SALARY,
+                EIGHTH_PLAYER_TEAM_ID
+        );
 
         assertNotNull(players);
         assertEquals(PLAYERS_QNT, players.size());
@@ -59,7 +74,12 @@ public class PlayersParserTest extends ParserTest {
         PlayersParser.INSTANCE.parse(testJson);
     }
 
-    private PlayerEntity playerBuilder(long playerID, String playerName, int playerSalary, long playerTeamID) {
+    private PlayerEntity playerBuilder(
+            long playerID,
+            String playerName,
+            int playerSalary,
+            long playerTeamID
+    ) {
         PlayerEntity playerEntity = new PlayerEntity();
         playerEntity.setID(playerID);
         playerEntity.setName(playerName);
